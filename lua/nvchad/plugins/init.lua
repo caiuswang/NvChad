@@ -147,7 +147,7 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    dependencies = { "neovim-treesitter/nvim-treesitter" },
     cmd = "Telescope",
     opts = function()
       return require "nvchad.configs.telescope"
@@ -155,7 +155,7 @@ return {
   },
 
   {
-    "nvim-treesitter/nvim-treesitter",
+    "neovim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
@@ -163,7 +163,7 @@ return {
       return require "nvchad.configs.treesitter"
     end,
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      require("nvim-treesitter").setup(opts)
     end,
   },
 }
